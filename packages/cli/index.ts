@@ -6,6 +6,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+// Suppress deprecation warnings
+declare global {
+  namespace NodeJS {
+    interface Process {
+      noDeprecation?: boolean;
+    }
+  }
+}
+process.noDeprecation = true;
+
 import './src/gemini.js';
 import { main } from './src/gemini.js';
 

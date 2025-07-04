@@ -273,7 +273,10 @@ async function connectAndDiscover(
     transport.stderr.on('data', (data) => {
       const stderrStr = data.toString();
       // Filter out verbose INFO logs from some MCP servers
-      if (!stderrStr.includes('] INFO')) {
+      if (
+        !stderrStr.includes('] INFO') &&
+        process.env.DEBUG_SHOW_MCP_LOGS === 'true'
+      ) {
         console.debug(`MCP STDERR (${mcpServerName}):`, stderrStr);
       }
     });
