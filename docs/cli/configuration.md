@@ -277,6 +277,14 @@ The CLI automatically loads environment variables from an `.env` file. The loadi
 - **`CODE_ASSIST_ENDPOINT`**:
   - Specifies the endpoint for the code assist server.
   - This is useful for development and testing.
+- **`GEMINI_SUPPRESS_WARNINGS`**:
+  - Set to `true` to suppress deprecation warnings in the output.
+  - Useful when running Gemini CLI in non-interactive mode or when using the `--prompt` flag to get clean output.
+  - Example: `export GEMINI_SUPPRESS_WARNINGS="true"`
+- **`DEBUG_SHOW_MCP_LOGS`**:
+  - Set to `true` to show MCP server stderr logs (excluding INFO level logs).
+  - By default, MCP server logs are hidden to keep the output clean.
+  - Example: `export DEBUG_SHOW_MCP_LOGS="true"`
 
 ## Command-Line Arguments
 
